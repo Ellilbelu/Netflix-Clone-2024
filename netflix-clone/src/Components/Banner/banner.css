@@ -12,16 +12,18 @@
     /* height: 190px; */
 }
 .banner-title{
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: 2rem;
+    font-weight: 500;
     padding-bottom: 0.3rem;
 }
 .banner-description{
     width: 45rem;
     line-height: 1;
     padding: 1rem 0;
-    max-width: 360px;
+    /* max-width: 360px; */
     height: 80px;
+    font-size: 1.2rem;
+    font-weight: 300;
 }
 .banner-button {
     cursor: pointer;

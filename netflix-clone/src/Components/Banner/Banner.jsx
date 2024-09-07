@@ -4,7 +4,7 @@ import requests from "../../utils/Requests";
 import "./banner.css";
 
 function Banner() {
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState({});
   useEffect(() => {
     (async () => {
       try {
@@ -20,7 +20,7 @@ function Banner() {
       }
     })();
   }, []);
-  console.log(movie)
+  console.log(movie);
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
@@ -29,7 +29,7 @@ function Banner() {
       className="banner"
       style={{
         backgroundSize: "cover",
-        backgroundImage: `url("https://image.tmdb.org/t/p/originals${movie.backdrop_path}")`,
+        backgroundImage: `url("https://image.tmdb.org/t/p/original${movie.backdrop_path}")`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
@@ -51,15 +51,23 @@ function Banner() {
 
 export default Banner;
 
-// const [movie, setMovie] = useState([])
+
+
+
+
+
+// const [movie, setMovie] = useState([]);
 // useEffect(() => {
 //   async function fetchData() {
 //     const request = await axios.get(requests.fetchNetflixOrginals);
-//     setMovie(request.data.results
-//       [Math.floor(Math.random() * request.data.results.length)]
+//     console.log(request);
+//     setMovie(
+//       request.data.results[
+//         Math.floor(Math.random() * request.data.results.length)
+//       ]
 //     );
 //     return request;
 //   }
-//   fetchData()
+//   fetchData();
 // }, []);
-// console.log(movie)
+// console.log(movie);

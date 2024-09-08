@@ -7,7 +7,7 @@ function Home() {
   return (
     <>
         <Header/>
-        {/* <Banner/> */}
+        <Banner/>
         <Footer/>
         
     </>

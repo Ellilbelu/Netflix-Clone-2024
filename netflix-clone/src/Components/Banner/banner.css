@@ -1,15 +1,15 @@
 /* styling the banner */
 .banner{
-    margin-top: 10vh;
+    /* margin-top: 10vh;
     height: 80vh;
-    margin-bottom: 80vh;
+    margin-bottom: 80vh; */
     color: white;
     object-fit: contain;
 }
 .banner-contents{
     margin-left: 30px;
     padding-top: 300px;
-    /* height: 190px; */
+    height: 100px;
 }
 .banner-title{
     font-size: 2rem;

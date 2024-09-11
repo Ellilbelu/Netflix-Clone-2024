@@ -1,6 +1,6 @@
-import React from 'react'
-import "../Header/header.css"
-import NetflixLogo from "../../assets/images/NetflixLogo1.png"
+import React from "react";
+import "../Header/header.css";
+import NetflixLogo from "../../assets/images/NetflixLogo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
@@ -24,10 +24,21 @@ function Header() {
         </div>
         <div className="header-right">
           <ul>
-            <li><SearchIcon /></li>
-            <li><NotificationsIcon /></li>
-            <li><AccountBoxIcon/></li>
-            <li><ArrowDropDownIcon/></li>
+            <li>
+              <SearchIcon />
+            </li>
+            <li>
+              Kids 
+            </li>
+            <li>
+              <NotificationsIcon />
+            </li>
+            <li>
+              <AccountBoxIcon />
+            </li>
+            <li>
+              <ArrowDropDownIcon />
+            </li>
           </ul>
         </div>
       </div>
@@ -35,4 +46,4 @@ function Header() {
   );
 }
 
-export default Header
+export default Header;

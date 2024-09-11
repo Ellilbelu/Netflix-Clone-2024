@@ -1,8 +1,8 @@
 /* styling the banner */
 .banner{
-    /* margin-top: 10vh;
+    margin-top: 2vh;
     height: 80vh;
-    margin-bottom: 80vh; */
+    margin-bottom: 10vh;
     color: white;
     object-fit: contain;
 }
@@ -17,7 +17,7 @@
     padding-bottom: 0.3rem;
 }
 .banner-description{
-    width: 45rem;
+    width: 25rem;
     line-height: 1;
     padding: 1rem 0;
     /* max-width: 360px; */
@@ -47,7 +47,7 @@
     transition: all0.2s;
 }
 .banner-fadeBottom{
-    height: 40vh;
+    height: 50vh;
     background-image: linear-gradient(
         180deg,
         transparent,

@@ -2,6 +2,9 @@ import React from "react";
 import Row from "../Row/Row";
 import requests from "../../utils/request";
 function RowList() {
+
+  // passing row titles and movie urls using props 
+
   return (
     <>
       <Row

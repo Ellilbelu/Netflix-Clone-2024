@@ -7,12 +7,13 @@ function Footer() {
   return (
     <div className="footer-outer-container">
       <div className="footer-inner-container">
+   {/* rendering the imported icons from the Mui websight */}
         <div className="footer-icons">
           <FacebookOutlinedIcon />
           <InstagramIcon />
-          
           <YouTubeIcon />
         </div>
+{/* footer lists start here */}
         <div className="footer-data">
           <div>
             <ul>
@@ -43,12 +44,10 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className='service-code'>
+        <div className="service-code">
           <p>Service Code</p>
         </div>
-        <div className='copy-write'>
-          &copy; 1997-2024 Netflix, Inc.
-        </div>
+        <div className="copy-write">&copy; 1997-2024 Netflix, Inc.</div>
       </div>
     </div>
   );

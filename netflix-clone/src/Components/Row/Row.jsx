@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
 import axios from "../../utils/axios";
-import movieTrailer from "movie-trailer";
+import movieTrailer from "movie-trailer"; 
 import YouTube from "react-youtube";
 import "./row.css";
+
+
 function Row({ title, fetchUrl, isLargeRow }) {
+
+  //seting states of movies and movie trailers using useState hook
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
 
   const base_url = "https://image.tmdb.org/t/p/original";
 
+  // promising to fetch the urls is the request file which is assigned to fetchUrl variable
   useEffect(() => {
     (async () => {
       try {
@@ -22,6 +27,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
     })();
   }, [fetchUrl]);
 
+  // creating a function to display each movie trailer on a click
   const handleClick = (movie) => {
     if (trailerUrl) {
       setTrailerUrl("");
@@ -32,6 +38,8 @@ function Row({ title, fetchUrl, isLargeRow }) {
           const urlParams = new URLSearchParams(new URL(url).search);
           console.log(urlParams);
           console.log(urlParams.get("v"));
+
+          // changing the state of the movie trailer using the video ID
           setTrailerUrl(urlParams.get("v"));
         }
       );

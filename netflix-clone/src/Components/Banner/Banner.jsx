@@ -7,9 +7,11 @@ function Banner() {
   const [movie, setMovie] = useState([]);
   useEffect(() => {
     (async () => {
+      // promising to fetch the data form the source
       try {
         const request = await axios.get(requests.fetchNetflixOrginals);
         console.log(request);
+        // selecting one random movie at every refresh/mount
         setMovie(
           request.data.results[
             Math.floor(Math.random() * request.data.results.length)
@@ -21,10 +23,13 @@ function Banner() {
     })();
   }, []);
   console.log(movie);
+
+  //a function for limiting the characters of the movie description
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
   return (
+    // stying the banner div
     <div
       className="banner"
       style={{
@@ -34,6 +39,7 @@ function Banner() {
         backgroundRepeat: "no-repeat",
       }}
     >
+      {/* selecting the movie by its title or its name or orginal name */}
       <div className="banner-contents">
         <h1 className="banner-title">
           {movie?.title || movie?.name || movie?.original_name}
@@ -41,6 +47,7 @@ function Banner() {
         <div className="banner-buttons">
           <button className="banner-button play">Play</button>
           <button className="banner-button">My List</button>
+          {/* rendering the truncate function about the description */}
         </div>
         <h1 className="banner-description">{truncate(movie?.overview, 150)}</h1>
       </div>
@@ -50,11 +57,6 @@ function Banner() {
 }
 
 export default Banner;
-
-
-
-
-
 
 // const [movie, setMovie] = useState([]);
 // useEffect(() => {

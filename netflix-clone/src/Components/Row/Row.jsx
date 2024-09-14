@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "../../utils/axios";
-import movieTrailer from "movie-trailer"; 
+import movieTrailer from "movie-trailer";
 import YouTube from "react-youtube";
 import "./row.css";
 
-
-function Row({ title, fetchUrl, isLargeRow }) {
-
+function Row({ title, fetchUrl, isLargeRow, activeTrailer, setactiveTrailer }) {
   //seting states of movies and movie trailers using useState hook
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
@@ -31,6 +29,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
   const handleClick = (movie) => {
     if (trailerUrl) {
       setTrailerUrl("");
+      setactiveTrailer("");
     } else {
       movieTrailer(movie?.title || movie?.name || movie?.original_name).then(
         (url) => {
@@ -41,6 +40,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 
           // changing the state of the movie trailer using the video ID
           setTrailerUrl(urlParams.get("v"));
+          setactiveTrailer(title);
         }
       );
     }
@@ -73,7 +73,8 @@ function Row({ title, fetchUrl, isLargeRow }) {
         })}
       </div>
       <div style={{ padding: "40px" }}>
-        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+        {trailerUrl && activeTrailer === title && (<YouTube videoId={trailerUrl} opts={opts} />
+        )}
       </div>
     </div>
   );

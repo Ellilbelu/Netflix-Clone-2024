@@ -40,18 +40,18 @@ function Banner() {
       }}
     >
       {/* selecting the movie by its title or its name or orginal name */}
-      <div className="banner-contents">
-        <h1 className="banner-title">
+      <div className="banner__contents">
+        <h1 className="banner__title">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
-        <div className="banner-buttons">
-          <button className="banner-button play">Play</button>
-          <button className="banner-button">My List</button>
+        <div className="banner__buttons">
+          <button className="banner__button play">Play</button>
+          <button className="banner__button">My List</button>
           {/* rendering the truncate function about the description */}
         </div>
-        <h1 className="banner-description">{truncate(movie?.overview, 150)}</h1>
+        <h1 className="banner__description">{truncate(movie?.overview, 150)}</h1>
       </div>
-      <div className="banner-fadeBottom" />
+      <div className="banner__fadeBottom" />
     </div>
   );
 }
